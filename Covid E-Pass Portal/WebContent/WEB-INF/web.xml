@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>covid</display-name>
+  <welcome-file-list>
+    <welcome-file>Home.html</welcome-file>
+    <welcome-file>Registration.html</welcome-file>
+    <welcome-file>NoPass.html</welcome-file>
+    <welcome-file>OTP.jsp</welcome-file>
+    <welcome-file>TravelPass.jsp</welcome-file>
+  </welcome-file-list>
+  
+  	<servlet>
+    	<servlet-name>PhotoServlet</servlet-name>
+    	<servlet-class>covid.photoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>PhotoServlet</servlet-name>
+	    <url-pattern>/photoServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>LoginServlet</servlet-name>
+    	<servlet-class>admin.adminLoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>LoginServlet</servlet-name>
+	    <url-pattern>/adminLoginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+    	<servlet-name>adminSessionServlet</servlet-name>
+    	<servlet-class>admin.adminSession</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	    <servlet-name>adminSessionServlet</servlet-name>
+	    <url-pattern>/adminSession</url-pattern>
+	</servlet-mapping>
+  
+</web-app>

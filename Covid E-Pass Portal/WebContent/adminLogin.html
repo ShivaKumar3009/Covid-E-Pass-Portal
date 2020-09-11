@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login</title>
+	<!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+	<div class="container bg-light p-3">
+		<div
+        class="bg-info container-fluid border border-dark"
+        style="height: 100px; width: auto; position: relative;"
+      >
+        <img
+          src="AndhraPradesh_Emblem.jpeg"
+          alt="AndhraPradesh Emblem"
+          class="mx-auto d-block p-2 float-left"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <img
+          src="AP_Police.png"
+          alt="AndhraPradesh Police"
+          class="mx-auto d-block p-2 float-right"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <div class="p-3">
+          <h4 class="text-center text-danger">
+            Covid 19 E-PASS Portal
+          </h4>
+          <p class="text-center">Government of Andhra Pradesh</p>
+        </div>
+      </div>
+
+      <div style="height: 35px;"></div>
+      	<h5 class="text-center text-dark">Login Here</h5>
+      	<div class="container bg-white border border-dark" style="width:400px; height: 350px " >
+      		<form class="form-group" action="adminLoginServlet" method="post">
+      		 <div class="container text-center p-4">
+	      		<p class="">Enter Email :</p>
+	      		<input type="text" id="LoginAdminEmail" name="LoginAdminEmail" placeholder="Enter Email" class="form-control mb-3" required="required" />
+	      		<p class="">Enter Password :</p>
+	      		<input type="password" id="LoginPass" name="LoginPass" placeholder="Enter Password" class="form-control mb-3" required="required" />
+	      		<input type="submit" class="btn btn-outline-info mb-3" onclick="return LoginValidate()" /><br>
+	      		<a href="adminRegistration.html" class="text-info"><u>Not Registered as an admin?</u></a>
+      		</div>
+      	</form> 
+      	</div>
+	</div>
+	<script type="text/javascript">
+	function LoginValidate(){
+		const email = document.getElementById("LoginAdminEmail");
+		const pass = document.getElementById("LoginPass");
+		var emailReg=/^([\.-\w]+)@([\.-\w]+).([a-z]{2,10})$/ ;
+		if(email.value.trim()==""){
+			alert("Email can not be empty");
+			return false;
+		}else if( !emailReg.test(email.value)){
+			alert("Enter valid email id");
+			return false;
+		}else if(pass.value.trim()==""){
+			alert("Password can not be empty");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	</script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Covid-19</title>
+
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container bg-light p-3">
+      <div
+        class="bg-info container-fluid border border-dark"
+        style="height: 100px; width: auto; position: relative;"
+      >
+        <img
+          src="AndhraPradesh_Emblem.jpeg"
+          alt="AndhraPradesh Emblem"
+          class="mx-auto d-block p-2 float-left"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <img
+          src="AP_Police.png"
+          alt="AndhraPradesh Police"
+          class="mx-auto d-block p-2 float-right"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <div class="p-3">
+          <h4 class="text-center text-danger">
+            Covid 19 E-PASS Portal
+          </h4>
+          <p class="text-center">Government of Andhra Pradesh</p>
+        </div>
+      </div>
+
+      <div style="height: 35px;"></div>
+
+      <div class="container">
+        <!-- Apply Pass -->
+        <div
+          class="float-left border border-dark rounded p-3"
+          style="
+            width: 45%;
+            background-color: rgb(214, 231, 235);
+            position: relative;
+          "
+        >
+          <ol class="">
+            <li>
+              Essential service providers do not require travel pass for
+              inter-state or intra-state travel.
+            </li>
+            <li>
+              The authority of approval or rejection of passes is exclusively
+              with the respective collector office in districts and zonal deputy
+              commissioner office in cities.
+            </li>
+            <li>
+              All other individuals/group can apply for Travel Pass through this
+              platform.
+            </li>
+            <li>Fill all the details correctly and click on submit.</li>
+            <li>
+              After submitting the application, you will receive a token ID.
+              Save it, and use it to check the status of your application.
+            </li>
+            <li>
+              The e-pass will contain your details, vehicle number and validity.
+            </li>
+            <li>
+              Keep a soft / hard copy with you while traveling and show it to
+              the police when asked.
+            </li>
+            <li>
+              It is a punishable offense to copy, misuse or use it after the
+              valid date or without authorization.
+            </li>
+            <li>
+              The size of the photo should not exceed 5 MB and the size of the
+              relevant document should not exceed 5 MB.
+            </li>
+            <li>The application form should be filled in English only.</li>
+          </ol>
+
+          <a onclick="pop()" class="btn btn-info mx-auto d-block">
+            <strong>Apply For Pass Here</strong>
+          </a>
+        </div>
+
+        <!-- Download Pass -->
+        <div
+          class="float-right border border-dark rounded p-3 mb-4"
+          style="
+            width: 40%;
+            background-color: rgb(214, 231, 235);
+            position: relative;
+          "
+        >
+        <form action="home" method="post">
+          <ol>
+            <li>Use the following button to download your travel pass.</li>
+            <li>
+              You will need to enter <strong>Aadhar Number</strong> in order to download your travel
+              pass.
+            </li>
+            <li>
+              If your application is approved, you can download your e-Pass from
+              this page.
+            </li>
+          </ol>
+          <ol class="list-unstyled">
+            <li>
+              <input
+                type="text"
+                placeholder="eg: 1234 5678 9012"
+                class="mx-auto d-block"
+                name="aadhar"
+              />
+            </li>
+          </ol>
+
+          <input type="submit"  class="btn btn-info mx-auto d-block" value="Download Pass Here">
+          </form>
+        </div>
+		 <div class="float-right border border-dark rounded p-3 text-center" style="width: 40%;
+            background-color: rgb(214, 231, 235);
+            position: relative;">
+		 	<p>Check Covid 19 Cases in Andhra Pradesh</p>
+		 	<a href="CovidInAP.html" class="btn btn-info">Click Here</a>
+		 </div>
+        <div class="clearfix"></div>
+      </div>
+     
+    </div>
+    <div
+      class="p-3 bg-light text-center"
+      id="box"
+      style="
+        width: 500px;
+        overflow: hidden;
+        box-shadow: 0 0 20px black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: none;
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+      "
+    >
+      <h3 class="text-center form-group">
+        Do you need to visit outside of Andhra Pradesh ?
+      </h3>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="move"
+            id="yes"
+            value="YES"
+          />yes
+        </label>
+      </div>
+      <div class="form-check-inline">
+        <label class="form-check-label">
+          <input
+            type="radio"
+            class="form-check-input"
+            name="move"
+            id="no"
+            value="no"
+          />no
+        </label>
+      </div>
+      <a onclick="unPop()" class="btn btn-warning float-right" id="myMove"
+        >submit</a
+      >
+    </div>
+    <script type="text/javascript">
+      function pop() {
+        if (true) {
+          document.getElementById("box").style.display = "block";
+        }
+      }
+      function unPop() {
+        var move = document.getElementById("yes").checked;
+        var move2 = document.getElementById("no").checked
+        if (move) {
+          document.getElementById("box").style.display = "none";
+          alert("Sorry , We are not issuing Travel Passes to visit out of Andhra Pradesh");
+        } else if(move2) {
+          document.getElementById("myMove").href = "Registration.html";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration | Covid-19</title>
+
+    <!-- CSS only -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script type="module" src="covidModule.js"></script>
+  </head>
+
+  <body>
+    <div class="container bg-light p-3">
+      <div
+        class="bg-info container-fluid border border-dark"
+        style="height: 100px; width: auto; position: relative;"
+      >
+        <img
+          src="AndhraPradesh_Emblem.jpeg"
+          alt="AndhraPradesh Emblem"
+          class="mx-auto d-block p-2 float-left"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <img
+          src="AP_Police.png"
+          alt="AndhraPradesh Police"
+          class="mx-auto d-block p-2 float-right"
+          style="width: 100px; height: 100px; border-radius: 0%;"
+        />
+        <div class="p-3">
+          <h4 class="text-center text-danger">
+          Covid 19 E-PASS Portal
+        </h4>
+        <h6 class="text-center">Government of Andhra Pradesh</h6>
+        </div>
+      </div>
+
+      <div style="height: 35px;" class="text-center p-2"><h6>( <span class="text-danger">*</span> ) Required</h6></div>
+      <!-- Applicant Details -->
+      <form class="form-group"  id="formElem" action="RegisterServlet" method="post" enctype="multipart/form-data" onsubmit="demo()" >
+	      <div class="container bg-white p-3">
+	        <p class="bg-info border border-dark text-center">Applicant Details</p>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Applicant's Name <span class="text-danger">*</span></h6>
+	              <input
+	                type="text"
+	                class="form-control"
+	                id="name"
+	                name="name"
+	                placeholder="Applicant's Name"
+	                required="required"
+	              />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Gender <span class="text-danger">*</span></h6>
+	              <select class="text-info form-control" id="gender" name="gender" required="required" >
+		            <option value="">please select</option>
+		            <option value="male">male</option>
+		            <option value="female">female</option>
+		            <option value="others">others</option>
+          		</select>
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Email <span class="text-danger">*</span></h6>
+	              <input
+	                type="text"
+	                class="form-control"
+	                id="email"
+	                name="email"
+	                placeholder="Applicant's Email"
+	                required="required"
+	              />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Mobile Number <span class="text-danger">*</span></h6>
+	              <input
+	                type="text"
+	                class="form-control"
+	                id="mobile"
+	                name="mobile"
+	                placeholder="Applicant's Mobile Number"
+	                required="required"
+	              />
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Aadhar Number <span class="text-danger">*</span></h6>
+	              <input
+	                type="text"
+	                class="form-control"
+	                id="Aadhar"
+	                name="Aadhar"
+	                placeholder="eg: 1234 5678 9012"	
+	                required="required"         
+	              />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Applicant's Photograph <span class="text-danger">*</span></h6>
+	              <input type="file" name="photo" required="required"  />
+	            </div>
+	          </div>
+	      </div>
+
+	      <div style="height: 15px;"></div>
+	        <!--Present Address-->
+	      <div class="container bg-white p-3">
+	          <p class="bg-info border border-dark text-center">Present Address</p>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Flat No. /Street No. <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="flat" name="flat" required="required"  />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Area/ Locality <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="area"  name="area" required="required" />
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Town/ Village <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="town" name="town" required="required" />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Postal / Zip Code <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter Correct Pincode" required="required" />
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>District <span class="text-danger">*</span></h6>
+	              <select class="text-info border border-dark form-control" id="district" name="preDistrict" required="required" >
+	                <option value="">Select District</option>
+	                <option value="Anantapur">Anantapur</option>
+	                <option value="Chittoor">Chittoor</option>
+	                <option value="East Godavari">East Godavari</option>
+	                <option value="Guntur">Guntur</option>
+	                <option value="Krishna">Krishna</option>
+	                <option value="Kurnool">Kurnool</option>
+	                <option value="Prakasam">Prakasam</option>
+	                <option value="S.P.S. Nellore">S.P.S. Nellore</option>
+	                <option value="Srikakulam">Srikakulam</option>
+	                <option value="Visakhapatnam">Visakhapatnam</option>
+	                <option value="Vizianagaram">Vizianagaram</option>
+	                <option value="West Godavari">West Godavari</option>
+	                <option value="Y.S.R. Kadapa">Y.S.R. Kadapa</option>
+	              </select>
+	            </div>
+	            <div class="col-sm"></div>
+	          </div>
+	      </div> 
+
+	      <div style="height: 15px;"></div>
+	        <!--Destination Adderss-->
+	      <div class="container bg-white p-3">
+	          <p class="bg-info border border-dark text-center">Destination Address</p>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Flat No. /Street No. <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="flatDes" name="flatDes" required="required" />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Area/ Locality <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="areaDes" name="areaDes" required="required" />
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm">
+	              <h6>Town/ Village/ Ward No. <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="townDes" name="townDes" required="required" />
+	            </div>
+	            <div class="col-sm">
+	              <h6>Postal / Zip Code <span class="text-danger">*</span></h6>
+	              <input type="text" class="form-control" id="pincodeDes" name="pincodeDes" placeholder="Enter Correct Pincode" required="required" />
+	            </div>
+	          </div>
+	          <div class="row mb-3">
+	            <div class="col-sm" >
+	              <h6>District <span class="text-danger">*</span></h6>
+	                <select class="text-info border border-dark form-control" id="districtDes" name="districtDes" required="required" >
+	                  <option value="">Please Select</option>  
+	                  <option value="Anantapur">Anantapur</option>
+	                  <option value="Chittoor">Chittoor</option>
+	                  <option value="East Godavari">East Godavari</option>
+	                  <option value="Guntur">Guntur</option>
+	                  <option value="Krishna">Krishna</option>
+	                  <option value="Kurnool">Kurnool</option>
+	                  <option value="Prakasam">Prakasam</option>
+	                  <option value="S.P.S. Nellore">S.P.S. Nellore</option>
+	                  <option value="Srikakulam">Srikakulam</option>
+	                  <option value="Visakhapatnam">Visakhapatnam</option>
+	                  <option value="Vizianagaram">Vizianagaram</option>
+	                  <option value="West Godavari">West Godavari</option>
+	                  <option value="Y.S.R. Kadapa">Y.S.R. Kadapa</option>
+	                </select>
+	            </div>
+	            <div class="col-sm"></div>
+	          </div>
+	      </div>
+
+	      <div style="height: 15px;"></div>
+	      <!--Travel Details-->
+	      <div class="container bg-white p-3">
+	        <p class="bg-info border border-dark text-center">Travel Details</p>
+	        <div class="row mb-3">
+	          <div class="col-sm">
+	            <h6>Type of Travel <span class="text-danger">*</span></h6>
+	            <select class="text-info form-control" id="travelType" name="travelType" onchange="TravelType()" required="required" >
+	              <option value="">please select</option>
+	              <option value="one way">one way</option>
+	              <option value="round trip">round trip</option>
+	            </select>
+	          </div>
+	          <div class="col-sm">
+	            <h6>Reason for Travel <span class="text-danger">*</span></h6>
+	            <textarea class="form-control" rows="2" id="reason" name="reason" required="required" ></textarea>
+	          </div>
+	        </div>
+	        <div id="myId5"></div>
+	        <div class="row mb-3">
+	          <div class="col-sm">
+	            <h6>Travel Arrangement <span class="text-danger">*</span></h6>
+	            <select class="text-info form-control" id="mySelect" name="TravelArrangement" onchange="tryIt()" required="required" >
+		            <option value="">please select</option>
+		            <option value="Own Arrangement">Own Arrangement</option>
+		            <option value="Public Transport">Public Transport</option>
+          		</select>
+	          </div>
+	          <div class="col-sm"></div>
+	        </div>
+	        <div id="myId"></div>
+	        <div id="myId2"></div>
+	      </div>	
+
+	      <div style="height: 15px;"></div>
+	      <!--Traveller(s) Details-->
+	      <div class="container bg-white p-3">
+	        <p class="bg-info border border-dark text-center">Traveller(s) Details</p>
+	        <div class="row mb-3">
+	          <div class="col-sm">
+	            <h6>Name<span class="text-danger">*</span></h6>
+	            <input type="text" class="form-control" id="driver" placeholder="Applicant's Name" required="required" >
+	          </div>
+	          <div class="col-sm">
+	            <h6>Gender<span class="text-danger">*</span></h6>
+	            <select class="text-info form-control" id="DriverGender" required="required" >
+	              <option value="">please select</option>
+	              <option value="male">male</option>
+	              <option value="female">female</option>
+	              <option value="others">others</option>
+	            </select>
+	          </div>
+	          <div class="col-sm">
+	            <h6>Mobile Number<span class="text-danger">*</span></h6>
+	            <input type="text" class="form-control" id="DriverPhone" placeholder="Applicant's Mobile" required="required" >
+	          </div>
+	          <div class="col-sm">
+	            <h6>Aadhar Number <span class="text-danger">*</span></h6>
+	            <input type="text" class="form-control" id="DriverAadhar" placeholder="Applicant's Aadhar" required="required" >
+	          </div>
+	          <div class="col-sm">
+	            <h6>cold/cough/fever? <span class="text-danger">*</span></h6>
+	            <select class="text-info form-control" id="DriverHealth" required="required" >
+	              <option value="">please select</option>
+	              <option value="yes">Yes</option>
+	              <option value="no">No</option>
+	            </select>
+	          </div>
+	          <div class="col-sm">
+	            <h6>quarantined ever? <span class="text-danger">*</span></h6>
+	            <select class="text-info form-control" id="DriverQuar" required="required" >
+	              <option value="">please select</option>
+	              <option value="yes">Yes</option>
+	              <option value="no">No</option>
+	            </select>
+	          </div>
+	        </div>
+	      	<div id="myId3"></div>
+	      	<div id="myId4"></div>
+	      </div>
+
+	      <div style="height: 15px;"></div>
+	      <!--declaration-->
+	      <div class="container bg-white p-2">
+	      	<p class="bg-info border border-dark text-center">Declaration</p>
+	        <h6 class="text-danger">I hereby declare that above details are true and correct to the best of my knowledge. Also, I undertake that if anything
+	        is found untrue I shall be liable for punishment/penalty as per law.</h6>
+	        <h6 class="text-dark">I hereby declare that I have downloaded Aarogya Setu App and have done Self Assessment on Aarogya Setu App.</h6>
+	        <input type="checkbox" class="mr-2" required="required"><b>I agree</b> <span class="text-danger"  >*</span>
+	      </div>
+
+
+		  <div style="height: 15px;"></div>
+		  <!-- buttons -->
+		  <div class="container bg-white p-3 form-check-inline">
+		          <input type="submit" class="btn btn-info mx-auto" onclick="return validate();" value="submit" >
+		          <input type="reset" class="btn btn-warning mx-auto " >
+		  </div>
+      </form>
+    </div>
+    
+    <script type="text/javascript" src="CovidData.js"></script>
+    <script type="text/javascript" src="Register.js"></script>
+    <script type="text/javascript" src="Valid.js"></script>
+    
+    
+  </body>
+</html>
